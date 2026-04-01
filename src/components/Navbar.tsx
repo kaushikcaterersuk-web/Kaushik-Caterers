@@ -12,10 +12,10 @@ export function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Contact Us', path: '/contact' },
-    { name: 'AI Planner', path: '/planner' },
+    { name: 'Services', path: '/services.html' },
+    { name: 'About Us', path: '/about.html' },
+    { name: 'Contact Us', path: '/contact.html' },
+    { name: 'AI Planner', path: '/planner.html' },
   ];
 
   const logoUrl = "https://i.ibb.co/G48zkPxW/Whats-App-Image-2026-03-31-at-12-49-02-1.jpg";
