@@ -5,6 +5,13 @@
     { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/planner", "destination": "/planner.html" },
+    { "source": "/catering-service", "destination": "/catering-service.html" },
+    { "source": "/parties", "destination": "/parties.html" },
+    { "source": "/get-together", "destination": "/get-together.html" },
+    { "source": "/wedding", "destination": "/wedding.html" },
+    { "source": "/functions", "destination": "/functions.html" },
+    { "source": "/bhandara", "destination": "/bhandara.html" },
+    { "source": "/music", "destination": "/music.html" },
     { "source": "/services/:id", "destination": "/service-detail.html" }
   ]
 }

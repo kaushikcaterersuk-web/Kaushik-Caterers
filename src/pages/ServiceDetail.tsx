@@ -8,8 +8,13 @@ import Markdown from 'react-markdown';
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-export default function ServiceDetail() {
-  const { id } = useParams();
+interface ServiceDetailProps {
+  id?: string;
+}
+
+export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
+  const { id: paramId } = useParams();
+  const id = propId || paramId;
   const service = SERVICE_CATEGORIES.find(s => s.id === id);
   const [aiPlan, setAiPlan] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
