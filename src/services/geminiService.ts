@@ -1,10 +1,22 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+let aiInstance: GoogleGenAI | null = null;
 
-export async function getEventSuggestions(prompt: string) {
+function getAIInstance() {
+  if (!aiInstance) {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error("GEMINI_API_KEY is not defined. Please configure it in your environment secrets.");
+    }
+    aiInstance = new GoogleGenAI({ apiKey });
+  }
+  return aiInstance;
+}
+
+export async function* getEventSuggestionsStream(prompt: string) {
   try {
-    const response = await ai.models.generateContent({
+    const ai = getAIInstance();
+    const response = await ai.models.generateContentStream({
       model: "gemini-3-flash-preview",
       contents: prompt,
       config: {
@@ -21,9 +33,17 @@ export async function getEventSuggestions(prompt: string) {
       },
     });
 
-    return response.text;
+    for await (const chunk of response) {
+      if (chunk.text) {
+        yield chunk.text;
+      }
+    }
   } catch (error) {
     console.error("Error getting AI suggestions:", error);
-    return "I'm sorry, I'm having trouble connecting to my planning brain right now. Please try again or contact our team directly!";
+    if (error instanceof Error && error.message.includes("GEMINI_API_KEY")) {
+      yield "Configuration Error: The AI Planner is missing its API Key. Please ensure GEMINI_API_KEY is set in the environment.";
+    } else {
+      yield "I'm sorry, I'm having trouble connecting to my planning brain right now. Please try again or contact our team directly!";
+    }
   }
 }

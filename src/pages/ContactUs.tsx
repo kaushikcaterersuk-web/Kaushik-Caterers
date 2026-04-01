@@ -9,102 +9,129 @@ export default function ContactUs() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pb-12 bg-blue-900 min-h-screen"
+      className="pb-12 bg-[#2D1B14] min-h-screen relative overflow-hidden"
     >
+      {/* Texture Overlay */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/leather.png')]" />
+
       {/* Header */}
-      <section className="bg-blue-800 py-16 px-4 text-white">
-        <div className="max-w-7xl mx-auto text-center space-y-6">
-          <span className="text-xs font-bold tracking-[0.3em] text-[#FFD700] uppercase block">Get In Touch</span>
-          <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter">Contact Our Experts</h1>
-          <p className="text-stone-200 max-w-2xl mx-auto leading-relaxed font-medium">
+      <section className="bg-[#3E2723] py-24 px-4 text-white border-b border-[#FFD700]/20 shadow-2xl relative z-10">
+        <div className="max-w-7xl mx-auto text-center space-y-8">
+          <motion.span 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="text-sm font-black tracking-[0.5em] text-[#FFD700] uppercase block"
+          >
+            Connect With Us
+          </motion.span>
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1 }}
+            className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none"
+          >
+            Let's <span className="text-[#FFD700]">Talk</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-stone-300 max-w-2xl mx-auto leading-relaxed font-medium text-lg"
+          >
             Have questions about our services or want to book an appointment? We're here to help you plan the perfect event.
-          </p>
+          </motion.p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 mt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <section className="max-w-7xl mx-auto px-4 mt-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Cards */}
-          <div className="bg-[#8B0000] p-10 rounded-[2.5rem] shadow-2xl border border-white/10 space-y-8 text-white">
-            <div className="space-y-2 pb-6 border-b border-white/10">
-              <h3 className="text-2xl font-bold uppercase tracking-tight text-[#FFD700]">Owner Details</h3>
-              <div className="space-y-1">
-                <p className="font-bold">Name : Rahul (Owner)</p>
-                <p className="text-sm text-white/80">email : kaushikcaterersuk@gmail.com</p>
+          <motion.div 
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="bg-[#4E342E] p-12 rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/5 space-y-10 text-white"
+          >
+            <div className="space-y-4 pb-8 border-b border-white/10">
+              <h3 className="text-3xl font-black uppercase tracking-tight text-[#FFD700]">Owner Details</h3>
+              <div className="space-y-2">
+                <p className="text-xl font-black">Rahul (Owner)</p>
+                <p className="text-sm text-[#FFD700]/80 font-bold tracking-wider uppercase">kaushikcaterersuk@gmail.com</p>
               </div>
             </div>
 
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-[#FFD700] shrink-0">
-                <Phone className="w-6 h-6" />
+            <div className="flex items-start space-x-6 group">
+              <div className="w-16 h-16 bg-[#FFD700] rounded-3xl flex items-center justify-center text-[#3E2723] shrink-0 shadow-lg group-hover:rotate-12 transition-transform duration-500">
+                <Phone className="w-8 h-8" />
               </div>
               <div>
-                <h4 className="font-bold mb-1">Call Us</h4>
-                <p className="text-white/60 text-sm mb-2">Available for consultations</p>
-                <a href={`tel:${BUSINESS_INFO.phone}`} className="text-lg font-bold hover:text-[#FFD700] transition-colors">{BUSINESS_INFO.phone}</a>
+                <h4 className="font-black uppercase tracking-widest text-xs text-[#FFD700] mb-2">Call Us</h4>
+                <p className="text-white/60 text-sm mb-2 font-medium italic">Available for consultations</p>
+                <a href={`tel:${BUSINESS_INFO.phone}`} className="text-2xl font-black hover:text-[#FFD700] transition-colors">{BUSINESS_INFO.phone}</a>
               </div>
             </div>
 
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-[#FFD700] shrink-0">
-                <MapPin className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-bold mb-1">Visit Us</h4>
-                <p className="text-white/60 text-sm mb-2">Our main office in Dehradun</p>
-                <p className="font-medium leading-relaxed">{BUSINESS_INFO.address}</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-[#FFD700] shrink-0">
-                <Clock className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-bold mb-1">Working Hours</h4>
-                <p className="text-white/60 text-sm mb-2">Open all days of the week</p>
-                <p className="font-medium">{BUSINESS_INFO.timings}</p>
-              </div>
-            </div>
-
-            <div className="pt-8 border-t border-stone-100">
-              <h4 className="font-bold text-stone-900 mb-4">Follow Our Journey</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 bg-stone-50 rounded-full flex items-center justify-center text-stone-600 hover:bg-stone-900 hover:text-white transition-all">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-stone-50 rounded-full flex items-center justify-center text-stone-600 hover:bg-stone-900 hover:text-white transition-all">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-stone-50 rounded-full flex items-center justify-center text-stone-600 hover:bg-stone-900 hover:text-white transition-all">
-                  <Twitter className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Form Area */}
-          <div className="lg:col-span-2">
-            <EnquiryForm className="h-full" />
-          </div>
-        </div>
-      </section>
-
-      {/* Map Placeholder */}
-      <section className="max-w-7xl mx-auto px-4 mt-12">
-        <div className="h-[500px] bg-stone-200 rounded-[3rem] overflow-hidden relative group border-4 border-[#FFD700]/30 shadow-[0_0_30px_rgba(255,215,0,0.2)]">
-          <div className="absolute inset-0 flex items-center justify-center bg-stone-900/40 backdrop-blur-[1px] group-hover:backdrop-blur-0 transition-all duration-700 z-10">
-            <div className="text-center space-y-4 bg-white p-10 rounded-[2.5rem] shadow-2xl border-4 border-[#FFD700]">
-              <div className="w-16 h-16 bg-[#000080] rounded-2xl flex items-center justify-center text-[#FFD700] mx-auto mb-4 animate-bounce">
+            <div className="flex items-start space-x-6 group">
+              <div className="w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center text-[#FFD700] shrink-0 border border-white/10 group-hover:-rotate-12 transition-transform duration-500">
                 <MapPin className="w-8 h-8" />
               </div>
-              <h3 className="text-3xl font-bold text-[#000080] uppercase tracking-tight">Find Us in Dehradun</h3>
-              <p className="text-stone-600 max-w-xs mx-auto font-bold uppercase tracking-wide text-xs">{BUSINESS_INFO.address}</p>
+              <div>
+                <h4 className="font-black uppercase tracking-widest text-xs text-[#FFD700] mb-2">Visit Us</h4>
+                <p className="text-white/60 text-sm mb-2 font-medium italic">Our main office in Dehradun</p>
+                <p className="font-bold leading-relaxed text-lg">{BUSINESS_INFO.address}</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-6 group">
+              <div className="w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center text-[#FFD700] shrink-0 border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                <Clock className="w-8 h-8" />
+              </div>
+              <div>
+                <h4 className="font-black uppercase tracking-widest text-xs text-[#FFD700] mb-2">Working Hours</h4>
+                <p className="text-white/60 text-sm mb-2 font-medium italic">Open all days of the week</p>
+                <p className="font-bold text-lg">{BUSINESS_INFO.timings}</p>
+              </div>
+            </div>
+
+            <div className="pt-10 border-t border-white/10">
+              <h4 className="font-black uppercase tracking-[0.3em] text-xs text-[#FFD700] mb-6">Follow Our Journey</h4>
+              <div className="flex space-x-6">
+                {[Facebook, Instagram, Twitter].map((Icon, i) => (
+                  <a key={i} href="#" className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-white hover:bg-[#FFD700] hover:text-[#3E2723] transition-all duration-500 hover:-translate-y-2 shadow-xl">
+                    <Icon className="w-6 h-6" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Form Area */}
+          <motion.div 
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="lg:col-span-2"
+          >
+            <EnquiryForm className="h-full" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="max-w-7xl mx-auto px-4 mt-24 relative z-10">
+        <div className="h-[600px] bg-stone-200 rounded-[4rem] overflow-hidden relative group border-8 border-[#3E2723] shadow-2xl">
+          <div className="absolute inset-0 flex items-center justify-center bg-[#3E2723]/60 backdrop-blur-[2px] group-hover:backdrop-blur-0 transition-all duration-1000 z-10">
+            <div className="text-center space-y-6 bg-white p-12 rounded-[3rem] shadow-2xl border-4 border-[#FFD700] max-w-md mx-4">
+              <div className="w-20 h-20 bg-[#3E2723] rounded-3xl flex items-center justify-center text-[#FFD700] mx-auto mb-6 animate-bounce shadow-xl">
+                <MapPin className="w-10 h-10" />
+              </div>
+              <h3 className="text-4xl font-black text-[#3E2723] uppercase tracking-tighter">Find Us</h3>
+              <p className="text-stone-600 font-bold uppercase tracking-widest text-xs leading-relaxed">{BUSINESS_INFO.address}</p>
               <a 
                 href="https://maps.app.goo.gl/7bekmg2potpdq5bz9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-[#8B0000] text-white rounded-full font-black hover:bg-[#000080] transition-all uppercase tracking-widest text-sm shadow-xl"
+                className="inline-block px-12 py-5 bg-[#3E2723] text-[#FFD700] rounded-full font-black hover:bg-[#FFD700] hover:text-[#3E2723] transition-all uppercase tracking-[0.3em] text-xs shadow-2xl"
               >
                 Open in Google Maps
               </a>
@@ -112,28 +139,28 @@ export default function ContactUs() {
           </div>
           <img 
             src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=2000" 
-            alt="Map Placeholder" 
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+            alt="Map Location" 
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
           />
         </div>
       </section>
 
       {/* Trust Banner */}
-      <section className="max-w-7xl mx-auto px-4 mt-12 text-center space-y-12 pb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">"Trust is the main ingredient in our recipe for success."</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          <div className="flex items-center space-x-2 text-stone-300">
-            <CheckCircle2 className="w-5 h-5 text-[#FFD700]" />
-            <span className="font-bold uppercase tracking-widest text-xs">Verified GSTIN</span>
-          </div>
-          <div className="flex items-center space-x-2 text-stone-300">
-            <CheckCircle2 className="w-5 h-5 text-[#FFD700]" />
-            <span className="font-bold uppercase tracking-widest text-xs">41+ Years Experience</span>
-          </div>
-          <div className="flex items-center space-x-2 text-stone-300">
-            <CheckCircle2 className="w-5 h-5 text-[#FFD700]" />
-            <span className="font-bold uppercase tracking-widest text-xs">100% Satisfaction</span>
-          </div>
+      <section className="max-w-7xl mx-auto px-4 mt-24 text-center space-y-16 pb-24 relative z-10">
+        <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-tight italic">
+          "Trust is the <span className="text-[#FFD700]">Main Ingredient</span> in our recipe for success."
+        </h2>
+        <div className="flex flex-wrap justify-center gap-12">
+          {[
+            { label: "Verified GSTIN", icon: CheckCircle2 },
+            { label: "41+ Years Experience", icon: CheckCircle2 },
+            { label: "100% Satisfaction", icon: CheckCircle2 }
+          ].map((item, i) => (
+            <div key={i} className="flex items-center space-x-4 bg-white/5 px-8 py-4 rounded-full border border-white/10 backdrop-blur-sm">
+              <item.icon className="w-6 h-6 text-[#FFD700]" />
+              <span className="font-black uppercase tracking-[0.3em] text-xs text-white">{item.label}</span>
+            </div>
+          ))}
         </div>
       </section>
     </motion.div>

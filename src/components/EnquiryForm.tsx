@@ -1,16 +1,68 @@
 import { motion } from 'motion/react';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Loader2 } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { useState } from 'react';
 
 interface EnquiryFormProps {
   className?: string;
 }
 
 export default function EnquiryForm({ className }: EnquiryFormProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mvzvrkzg", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setIsSuccess(true);
+        (e.target as HTMLFormElement).reset();
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSuccess) {
+    return (
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className={cn("bg-white p-12 rounded-3xl shadow-xl border border-stone-100 text-center space-y-6 flex flex-col items-center justify-center", className)}
+      >
+        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-4">
+          <CheckCircle2 className="w-12 h-12" />
+        </div>
+        <h3 className="text-3xl font-black text-stone-900 uppercase tracking-tighter">Enquiry Sent!</h3>
+        <p className="text-stone-600 font-medium">Thank you for reaching out. Our team will contact you shortly.</p>
+        <button 
+          onClick={() => setIsSuccess(false)}
+          className="px-8 py-3 bg-stone-900 text-white rounded-full font-bold hover:bg-stone-800 transition-all"
+        >
+          Send Another
+        </button>
+      </motion.div>
+    );
+  }
+
   return (
     <div className={cn("bg-white p-8 rounded-3xl shadow-xl border border-stone-100", className)}>
       <h3 className="text-2xl font-bold mb-6 text-stone-900 uppercase tracking-tight">Enquire Now</h3>
-      <form action="https://formspree.io/f/mvzvrkzg" method="POST" className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1">Name</label>
@@ -97,9 +149,17 @@ export default function EnquiryForm({ className }: EnquiryFormProps) {
 
         <button
           type="submit"
-          className="w-full py-4 bg-stone-900 text-white rounded-xl font-bold hover:bg-stone-800 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg"
+          disabled={isSubmitting}
+          className="w-full py-4 bg-stone-900 text-white rounded-xl font-bold hover:bg-stone-800 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
         >
-          Send Enquiry
+          {isSubmitting ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" />
+              Sending Enquiry...
+            </>
+          ) : (
+            'Send Enquiry'
+          )}
         </button>
 
         <div className="flex flex-wrap gap-4 pt-4 border-t border-stone-100 mt-6">
