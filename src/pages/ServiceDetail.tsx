@@ -99,10 +99,10 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
             <p className="text-stone-300 max-w-2xl leading-relaxed font-medium text-lg">
               {service.description}
             </p>
-            <div className="inline-flex items-center gap-3 bg-[#FFD700]/20 px-6 py-3 rounded-full border border-[#FFD700]/30">
-              <Users className="w-5 h-5 text-[#FFD700]" />
-              <span className="text-[#FFD700] font-bold uppercase tracking-widest text-sm">
-                Capacity: {BUSINESS_INFO.capacity}
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FFD700] to-[#FF8C00] px-8 py-4 rounded-full border-2 border-white shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:scale-105 transition-transform">
+              <Users className="w-6 h-6 text-white" />
+              <span className="text-white font-black uppercase tracking-[0.2em] text-sm">
+                Capacity: <span className="text-lg">{BUSINESS_INFO.capacity}</span>
               </span>
             </div>
           </div>
@@ -111,8 +111,8 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
 
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="space-y-12">
-          {/* Sub-Services Grid - 2 columns on mobile */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          {/* Sub-Services Grid - Centered to fill gaps */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {service.subServices.map((sub, i) => (
               <motion.div
                 key={i}
@@ -120,7 +120,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 overflow-hidden group hover:shadow-[0_20px_50px_rgba(255,215,0,0.2)] transition-all duration-500 flex flex-col hover:-translate-y-2"
+                className="bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 overflow-hidden group hover:shadow-[0_20px_50px_rgba(255,215,0,0.2)] transition-all duration-500 flex flex-col hover:-translate-y-2 w-[calc(50%-1rem)] sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] min-w-[160px] md:min-w-[240px]"
               >
                 <div className="h-40 md:h-56 overflow-hidden relative">
                   <img 

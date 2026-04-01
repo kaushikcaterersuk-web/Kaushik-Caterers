@@ -8,9 +8,18 @@ export default function Services() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pb-12 bg-gradient-to-br from-[#004d00] via-[#006400] to-[#004d00] min-h-screen relative overflow-hidden"
+      className="pb-12 bg-[#000000] min-h-screen relative overflow-hidden"
     >
-      {/* Animated Background Elements */}
+      {/* Mixed Art Painting Background */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FF00FF] via-[#00FFFF] to-[#FFD700] mix-blend-overlay" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#FF4500] rounded-full blur-[150px] animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#8A2BE2] rounded-full blur-[150px] animate-pulse [animation-delay:2s]" />
+        <div className="absolute top-[20%] right-[10%] w-[40%] h-[40%] bg-[#00CED1] rounded-full blur-[150px] animate-pulse [animation-delay:4s]" />
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/canvas-orange.png')] opacity-20" />
+      </div>
+
+      {/* Animated Particles */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <motion.div
@@ -67,11 +76,11 @@ export default function Services() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="inline-flex items-center gap-4 bg-gradient-to-r from-[#FFD700]/20 to-transparent px-10 py-5 rounded-full border border-[#FFD700]/30 mt-8 backdrop-blur-md"
+            className="inline-flex items-center gap-4 bg-gradient-to-r from-[#FFD700] to-[#FF8C00] px-10 py-5 rounded-full border-4 border-white shadow-[0_0_50px_rgba(255,215,0,0.5)] mt-8 backdrop-blur-md hover:scale-110 transition-transform"
           >
-            <Users className="w-6 h-6 text-[#FFD700]" />
-            <span className="text-[#FFD700] font-black uppercase tracking-[0.3em] text-sm">
-              Capacity: {BUSINESS_INFO.capacity} Guests
+            <Users className="w-8 h-8 text-white" />
+            <span className="text-white font-black uppercase tracking-[0.4em] text-lg drop-shadow-lg">
+              Capacity: <span className="text-2xl">{BUSINESS_INFO.capacity}</span> Guests
             </span>
           </motion.div>
         </div>
@@ -79,7 +88,7 @@ export default function Services() {
 
       {/* Services Grid */}
       <section className="relative z-10 max-w-7xl mx-auto px-4 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="flex flex-wrap justify-center gap-12">
           {SERVICE_CATEGORIES.map((service, i) => (
             <motion.div
               key={service.id}
@@ -87,7 +96,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-[#004d00] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)] transition-all duration-700 flex flex-col hover:-translate-y-4 border border-white/5"
+              className="group bg-[#004d00] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)] transition-all duration-700 flex flex-col hover:-translate-y-4 border border-white/5 w-full md:w-[calc(50%-24px)] lg:w-[calc(33.333%-32px)] min-w-[300px]"
             >
               <div className="relative h-80 overflow-hidden">
                 <img

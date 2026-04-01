@@ -74,21 +74,21 @@ export function Navbar() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="md:hidden absolute top-20 right-4 w-64 bg-[#000080]/90 backdrop-blur-md rounded-3xl border border-[#FFD700]/20 p-8 shadow-2xl z-40 flex flex-col space-y-6"
+              className="md:hidden absolute top-20 right-4 w-64 bg-[#2D1B10] backdrop-blur-xl rounded-3xl border-2 border-[#00FFFF]/50 p-8 shadow-[0_0_40px_rgba(0,255,255,0.2)] z-40 flex flex-col space-y-6"
             >
               {navLinks.map((link) => (
                 <a
                   key={link.path}
                   href={link.path}
-                  className={`text-lg font-bold tracking-widest uppercase transition-all ${
-                    isActive(link.path) ? 'text-white' : 'text-[#FFD700]/70 hover:text-[#FFD700]'
+                  className={`text-lg font-black tracking-[0.2em] uppercase transition-all ${
+                    isActive(link.path) ? 'text-[#00FFFF]' : 'text-white hover:text-[#00FFFF]'
                   }`}
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="pt-4 border-t border-[#FFD700]/20 text-center">
-                <p className="text-[#FFD700] text-[10px] font-bold uppercase tracking-widest">Since 1985</p>
+              <div className="pt-4 border-t border-[#00FFFF]/20 text-center">
+                <p className="text-[#00FFFF] text-[10px] font-black uppercase tracking-[0.4em]">Since 1985</p>
               </div>
             </motion.div>
           )}

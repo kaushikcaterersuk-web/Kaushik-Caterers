@@ -69,9 +69,9 @@ export default function Home() {
             <div className="text-4xl font-bold text-[#FFD700] drop-shadow-[0_0_10px_rgba(255,215,0,0.5)] group-hover:scale-110 transition-transform">{BUSINESS_INFO.satisfaction}</div>
             <div className="text-xs uppercase tracking-widest text-white/70 font-bold">Satisfaction</div>
           </div>
-          <div className="text-center space-y-2 group">
-            <div className="text-4xl font-bold text-[#FFD700] drop-shadow-[0_0_10px_rgba(255,215,0,0.5)] group-hover:scale-110 transition-transform">PAN</div>
-            <div className="text-xs uppercase tracking-widest text-white/70 font-bold">India Presence</div>
+          <div className="text-center space-y-2 group bg-[#FFD700] p-4 rounded-2xl shadow-[0_0_20px_rgba(255,215,0,0.3)] scale-110">
+            <div className="text-4xl font-black text-[#8B0000]">{BUSINESS_INFO.capacity}</div>
+            <div className="text-[8px] uppercase tracking-[0.3em] text-[#8B0000]/80 font-black">Max Capacity</div>
           </div>
         </div>
       </section>

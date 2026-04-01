@@ -11,7 +11,7 @@ export const BUSINESS_INFO = {
   years: "41+",
   satisfaction: "100%",
   customers: "4000+",
-  capacity: "Upto 800 Person",
+  capacity: "2500+",
   location: "Dehradun + PAN India",
   email: "kaushikcaterersuk@gmail.com",
 };
@@ -41,7 +41,7 @@ export const SERVICE_CATEGORIES = [
   {
     id: "catering-service",
     title: "Catering Service",
-    image: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.ibb.co/5x4LDnWZ/Whats-App-Image-2026-04-01-at-22-33-25.jpg",
     description: "Exquisite multi-cuisine menus tailored to your taste.",
     subServices: [
       { name: "Caterer", image: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=400" },
@@ -68,7 +68,7 @@ export const SERVICE_CATEGORIES = [
   {
     id: "parties",
     title: "Parties",
-    image: "https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.ibb.co/RTKpCnWz/Whats-App-Image-2026-04-01-at-22-34-06.jpg",
     description: "Vibrant and fun setups for all types of parties.",
     subServices: [
       { name: "Birthday Party", image: "https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=400" },
@@ -114,7 +114,7 @@ export const SERVICE_CATEGORIES = [
   {
     id: "functions",
     title: "Functions",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.ibb.co/h1hMt4cZ/Whats-App-Image-2026-04-01-at-22-35-36.jpg",
     description: "Professional management for formal and religious functions.",
     subServices: [
       { name: "Anniversary", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=400" },
@@ -139,7 +139,7 @@ export const SERVICE_CATEGORIES = [
   {
     id: "bhandara",
     title: "Bhandara",
-    image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.ibb.co/d0RhKkWk/Whats-App-Image-2026-04-01-at-22-53-21.jpg",
     description: "Traditional large-scale community feast catering.",
     subServices: [
       { name: "Traditional Bhandara", image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&q=80&w=400" },
@@ -150,7 +150,7 @@ export const SERVICE_CATEGORIES = [
   {
     id: "music",
     title: "Music",
-    image: "https://images.unsplash.com/photo-1514525253361-bee8718a74a7?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.ibb.co/Q3kxnnhS/Whats-App-Image-2026-04-01-at-22-54-26.jpg",
     description: "Soulful live performances and DJ to enchant your guests.",
     subServices: [
       { name: "Music Show", image: "https://images.unsplash.com/photo-1514525253361-bee8718a74a7?auto=format&fit=crop&q=80&w=400" },

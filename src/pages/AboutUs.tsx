@@ -75,9 +75,9 @@ export default function AboutUs() {
             </div>
             <div className="flex flex-col items-center space-y-2">
               <Users className="w-8 h-8 text-[#8B0000]" />
-              <div className="bg-[#8B0000]/20 px-4 py-2 rounded-xl border border-[#8B0000]/30">
-                <div className="font-bold text-xl text-[#8B0000]">{BUSINESS_INFO.capacity}</div>
-                <div className="text-[10px] uppercase tracking-widest text-[#003366] font-bold">Catering Capacity</div>
+              <div className="bg-gradient-to-r from-[#8B0000] to-[#FF4500] px-6 py-3 rounded-2xl border-2 border-white shadow-lg scale-110">
+                <div className="font-black text-2xl text-white">{BUSINESS_INFO.capacity}</div>
+                <div className="text-[8px] uppercase tracking-[0.3em] text-white/90 font-black">Catering Capacity</div>
               </div>
             </div>
             <div className="flex flex-col items-center space-y-2">
