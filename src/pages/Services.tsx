@@ -8,7 +8,7 @@ export default function Services() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pb-12 bg-[#00001a] min-h-screen relative overflow-hidden"
+      className="pb-12 bg-gradient-to-br from-[#004d00] via-[#006400] to-[#004d00] min-h-screen relative overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -33,11 +33,11 @@ export default function Services() {
             className="absolute w-1 h-1 bg-[#FFD700] rounded-full blur-[1px]"
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#000033]/80 via-[#00001a] to-[#00001a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#DAA520]/80 via-[#FFD700] to-[#FFD700]" />
       </div>
 
       {/* Header */}
-      <section className="relative z-10 bg-[#000033] py-24 px-4 text-white border-b border-[#FFD700]/20 shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
+      <section className="relative z-10 bg-gradient-to-r from-[#004d00] to-[#006400] py-24 px-4 text-white border-b border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
         <div className="max-w-7xl mx-auto text-center space-y-8">
           <motion.span 
             initial={{ y: 20, opacity: 0 }}
@@ -58,7 +58,7 @@ export default function Services() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-stone-400 max-w-2xl mx-auto leading-relaxed font-medium text-xl"
+            className="text-stone-200 max-w-2xl mx-auto leading-relaxed font-medium text-xl"
           >
             Experience the pinnacle of culinary artistry and event management with Kaushik Caterers.
           </motion.p>
@@ -87,7 +87,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-[#000033] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] transition-all duration-700 flex flex-col hover:-translate-y-4"
+              className="group bg-[#004d00] rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)] transition-all duration-700 flex flex-col hover:-translate-y-4 border border-white/5"
             >
               <div className="relative h-80 overflow-hidden">
                 <img
@@ -96,17 +96,17 @@ export default function Services() {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#000033] via-transparent to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#004d00] via-transparent to-transparent opacity-90" />
                 <div className="absolute bottom-10 left-10 right-10">
                   <h3 className="text-4xl font-black text-[#FFD700] uppercase tracking-tighter drop-shadow-2xl">{service.title}</h3>
                 </div>
               </div>
               <div className="p-12 space-y-8 flex-grow flex flex-col">
-                <p className="text-stone-400 leading-relaxed font-medium flex-grow text-lg">
+                <p className="text-stone-300 leading-relaxed font-medium flex-grow text-lg">
                   {service.description}
                 </p>
                 <a
-                  href={`/services/${service.id}`}
+                  href={`/${service.id}.html`}
                   className="inline-flex items-center gap-4 text-[#FFD700] font-black uppercase tracking-[0.3em] text-xs group/btn hover:text-white transition-all"
                 >
                   Explore Details
@@ -120,7 +120,7 @@ export default function Services() {
       </section>
 
       {/* Features Banner */}
-      <section className="relative z-10 bg-[#FFD700] py-16 overflow-hidden">
+      <section className="relative z-10 bg-[#004d00] py-16 overflow-hidden border-y border-white/5">
         <motion.div 
           animate={{ x: [0, -1000] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -134,8 +134,8 @@ export default function Services() {
                 "Fully Customizable Menu",
                 "Dehradun & PAN India Service"
               ].map((feature, j) => (
-                <div key={j} className="flex items-center text-[#000033] font-black uppercase tracking-[0.3em] text-xl italic">
-                  <CheckCircle2 className="w-8 h-8 text-[#000033] mr-4" />
+                <div key={j} className="flex items-center text-[#FFD700] font-black uppercase tracking-[0.3em] text-xl italic">
+                  <CheckCircle2 className="w-8 h-8 text-[#FFD700] mr-4" />
                   {feature}
                 </div>
               ))}
@@ -149,14 +149,14 @@ export default function Services() {
         <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none">
           Ready to <span className="text-[#FFD700]">Elevate</span> Your Event?
         </h2>
-        <p className="text-stone-400 text-xl font-medium max-w-2xl mx-auto">
+        <p className="text-stone-300 text-xl font-medium max-w-2xl mx-auto">
           Our experts are waiting to help you create an event that exceeds your expectations.
         </p>
         <motion.a 
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           href="/contact.html" 
-          className="inline-block px-16 py-6 bg-gradient-to-r from-[#FFD700] via-[#FFFACD] to-[#FFD700] text-[#000033] rounded-full font-black hover:shadow-[0_0_50px_rgba(255,215,0,0.4)] transition-all uppercase tracking-[0.3em] text-sm"
+          className="inline-block px-16 py-6 bg-gradient-to-r from-[#DAA520] via-[#FFD700] to-[#DAA520] text-[#3E2723] rounded-full font-black hover:shadow-[0_0_50px_rgba(218,165,32,0.4)] transition-all uppercase tracking-[0.3em] text-sm"
         >
           Get a Free Quote
         </motion.a>

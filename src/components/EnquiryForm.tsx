@@ -115,7 +115,7 @@ export default function EnquiryForm({ className }: EnquiryFormProps) {
             <select
               name="cateringType"
               required
-              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 focus:outline-none focus:ring-2 focus:ring-stone-900 transition-all appearance-none"
+              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#000080] transition-all appearance-none"
             >
               <option value="">Select Type</option>
               <option value="Wedding">Wedding</option>
@@ -143,14 +143,14 @@ export default function EnquiryForm({ className }: EnquiryFormProps) {
             name="description"
             rows={4}
             placeholder="Tell us more about your event requirements..."
-            className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 focus:outline-none focus:ring-2 focus:ring-stone-900 transition-all resize-none"
+            className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#000080] transition-all resize-none"
           ></textarea>
         </div>
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-4 bg-stone-900 text-white rounded-xl font-bold hover:bg-stone-800 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full py-4 bg-[#000080] text-white rounded-xl font-bold hover:bg-[#000033] transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>

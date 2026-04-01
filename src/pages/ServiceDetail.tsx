@@ -26,10 +26,10 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
 
   if (!service) {
     return (
-      <div className="min-h-screen bg-stone-100 flex items-center justify-center text-[#000080]">
+      <div className="min-h-screen bg-stone-100 flex items-center justify-center text-[#8B0000]">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold uppercase tracking-tighter">Service Not Found</h1>
-          <a href="/services.html" className="text-[#000080] underline uppercase tracking-widest font-bold">Back to Services</a>
+          <a href="/services.html" className="text-[#8B0000] underline uppercase tracking-widest font-bold">Back to Services</a>
         </div>
       </div>
     );
@@ -75,10 +75,10 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pb-12 bg-stone-100 min-h-screen"
+      className="pb-12 bg-gradient-to-br from-[#004d00] via-[#006400] to-[#004d00] min-h-screen"
     >
       {/* Header */}
-      <section className="bg-[#000080] py-16 px-4 text-white relative overflow-hidden">
+      <section className="bg-gradient-to-r from-[#004d00] to-[#006400] py-16 px-4 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img src={service.image} alt="" className="w-full h-full object-cover blur-sm" referrerPolicy="no-referrer" />
         </div>
@@ -112,7 +112,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="space-y-12">
           {/* Sub-Services Grid - 2 columns on mobile */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {service.subServices.map((sub, i) => (
               <motion.div
                 key={i}
@@ -120,22 +120,27 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-3xl border border-stone-200 overflow-hidden group hover:shadow-xl transition-all flex flex-col"
+                className="bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 overflow-hidden group hover:shadow-[0_20px_50px_rgba(255,215,0,0.2)] transition-all duration-500 flex flex-col hover:-translate-y-2"
               >
-                <div className="h-32 md:h-48 overflow-hidden relative">
+                <div className="h-40 md:h-56 overflow-hidden relative">
                   <img 
                     src={sub.image} 
                     alt={sub.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#004d00]/80 via-transparent to-transparent opacity-60" />
+                  <div className="absolute top-4 right-4 bg-[#FFD700] text-[#004d00] p-2 rounded-full shadow-lg scale-0 group-hover:scale-100 transition-transform duration-500">
+                    <Sparkles className="w-4 h-4 fill-current" />
+                  </div>
                 </div>
-                <div className="p-4 md:p-6 flex flex-col flex-grow">
-                  <h4 className="text-[#000080] font-bold uppercase tracking-wide text-xs md:text-sm mb-4 flex-grow">{sub.name}</h4>
+                <div className="p-6 md:p-8 flex flex-col flex-grow bg-gradient-to-b from-white/10 to-transparent">
+                  <h4 className="text-[#FFD700] font-black uppercase tracking-[0.2em] text-sm md:text-lg mb-6 flex-grow leading-tight drop-shadow-lg min-h-[3rem] flex items-center">
+                    {sub.name}
+                  </h4>
                   <button 
                     onClick={() => openEnquiryModal(sub.name)}
-                    className="w-full py-2 bg-[#000080] text-white rounded-xl font-bold uppercase tracking-widest text-[10px] md:text-xs hover:bg-[#FFD700] hover:text-[#000080] transition-colors"
+                    className="w-full py-4 bg-gradient-to-r from-[#FFD700] via-[#FFFACD] to-[#FFD700] text-[#004d00] rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] md:text-xs hover:scale-105 transition-all shadow-[0_10px_20px_rgba(255,215,0,0.3)] active:scale-95"
                   >
                     Enquiry Now
                   </button>
@@ -145,7 +150,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
           </div>
 
           {/* AI Planner Section */}
-          <div className="bg-[#00001a] rounded-[3rem] p-8 md:p-12 border border-[#FFD700]/20 shadow-2xl space-y-8 relative overflow-hidden group">
+          <div className="bg-gradient-to-br from-[#004d00] to-[#006400] rounded-[3rem] p-8 md:p-12 border border-white/10 shadow-2xl space-y-8 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF8C00]/10 blur-[100px] rounded-full -mr-32 -mt-32" />
             
             <div className="flex items-center justify-between flex-wrap gap-6 relative z-10">
@@ -166,7 +171,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
               <textarea
                 value={customPrompt}
                 onChange={(e) => setCustomPrompt(e.target.value)}
-                placeholder="e.g. I want a traditional theme with blue flowers and live music..."
+                placeholder="e.g. I want a traditional theme with red flowers and live music..."
                 className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white focus:ring-2 focus:ring-[#FF8C00] transition-all resize-none h-32 placeholder:text-stone-600"
               />
               <button
@@ -231,16 +236,16 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
             >
               <div className="p-8 space-y-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-[#000080] uppercase tracking-tight">Quick Enquiry</h3>
+                  <h3 className="text-2xl font-black text-[#FFD700] uppercase tracking-tighter">Quick Enquiry</h3>
                   <button 
                     onClick={() => setIsModalOpen(false)}
-                    className="p-2 hover:bg-stone-100 rounded-full transition-colors text-stone-400 hover:text-[#000080]"
+                    className="p-2 hover:bg-stone-100 rounded-full transition-colors text-stone-400 hover:text-[#004d00]"
                   >
                     <X className="w-6 h-6" />
                   </button>
                 </div>
                 
-                <p className="text-stone-500 font-medium">Enquiring for: <span className="text-[#000080] font-bold">{selectedSubService}</span></p>
+                <p className="text-stone-500 font-medium">Enquiring for: <span className="text-[#004d00] font-black uppercase tracking-widest">{selectedSubService}</span></p>
 
                 <form action="https://formspree.io/f/xjgpovpe" method="POST" className="space-y-4">
                   <input type="hidden" name="Category" value={service.title} />
@@ -253,7 +258,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                       name="Name"
                       required
                       placeholder="Enter your name"
-                      className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#000080] transition-all"
+                      className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#004d00] transition-all"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
@@ -264,7 +269,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                         name="Number"
                         required
                         placeholder="Phone number"
-                        className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#000080] transition-all"
+                        className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#004d00] transition-all"
                       />
                     </div>
                     <div>
@@ -274,7 +279,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                         name="Email"
                         required
                         placeholder="Email address"
-                        className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#000080] transition-all"
+                        className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#004d00] transition-all"
                       />
                     </div>
                   </div>
@@ -285,7 +290,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                         type="number"
                         name="Approx Persons"
                         placeholder="e.g. 100"
-                        className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#000080] transition-all"
+                        className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#004d00] transition-all"
                       />
                     </div>
                     <div>
@@ -294,7 +299,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                         type="text"
                         name="Place"
                         placeholder="e.g. Dehradun"
-                        className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#000080] transition-all"
+                        className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#004d00] transition-all"
                       />
                     </div>
                   </div>
@@ -304,7 +309,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                       name="Description"
                       rows={3}
                       placeholder="Tell us about your event"
-                      className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#000080] transition-all resize-none"
+                      className="w-full px-4 py-3 bg-stone-100 border-none rounded-xl focus:ring-2 focus:ring-[#3E2723] transition-all resize-none"
                     ></textarea>
                   </div>
                   
@@ -318,7 +323,7 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
                     </button>
                     <button
                       type="submit"
-                      className="flex-[2] py-4 bg-[#000080] text-white rounded-xl font-bold hover:bg-[#000060] transition-all shadow-lg uppercase tracking-widest flex items-center justify-center gap-2"
+                      className="flex-[2] py-4 bg-[#004d00] text-white rounded-xl font-black hover:bg-black transition-all shadow-lg uppercase tracking-widest flex items-center justify-center gap-2"
                     >
                       Send Enquiry
                       <Send className="w-4 h-4" />

@@ -42,11 +42,11 @@ export default function Home() {
               Exquisite taste, impeccable service, and 41+ years of trust.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="/contact.html" className="px-8 py-4 bg-[#FFD700] text-[#000080] rounded-full font-black hover:bg-white transition-all flex items-center group uppercase tracking-widest">
+              <a href="/contact.html" className="px-8 py-4 bg-[#FFD700] text-[#8B0000] rounded-full font-black hover:bg-white transition-all flex items-center group uppercase tracking-widest">
                 Plan Your Event
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="/services.html" className="px-8 py-4 bg-transparent border-2 border-[#FFD700] text-[#FFD700] rounded-full font-bold hover:bg-[#FFD700] hover:text-[#000080] transition-all uppercase tracking-widest">
+              <a href="/services.html" className="px-8 py-4 bg-transparent border-2 border-[#FFD700] text-[#FFD700] rounded-full font-bold hover:bg-[#FFD700] hover:text-[#8B0000] transition-all uppercase tracking-widest">
                 Explore Services
               </a>
             </div>
@@ -113,7 +113,7 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <a href="/services.html" className="inline-flex items-center px-10 py-4 bg-white/10 border border-white/20 text-white rounded-full font-bold hover:bg-white hover:text-[#000080] transition-all uppercase tracking-widest text-sm group">
+          <a href="/services.html" className="inline-flex items-center px-10 py-4 bg-white/10 border border-white/20 text-white rounded-full font-bold hover:bg-white hover:text-[#8B0000] transition-all uppercase tracking-widest text-sm group">
             View More Services
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
@@ -129,7 +129,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, i) => (
             <div key={i} className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 relative">
-              <div className="absolute -top-4 -left-4 bg-[#FFD700] text-[#000080] p-2 rounded-lg z-10">
+              <div className="absolute -top-4 -left-4 bg-[#FFD700] text-[#8B0000] p-2 rounded-lg z-10">
                 <Heart className="w-6 h-6 fill-current" />
               </div>
               <div className="flex items-center gap-4 mb-6">
@@ -187,12 +187,12 @@ export default function Home() {
             </div>
             <div className="absolute -bottom-10 -left-10 bg-[#FFD700] p-8 rounded-3xl shadow-2xl hidden md:block">
               <div className="flex items-center space-x-4">
-                <div className="bg-[#000080] p-3 rounded-2xl">
+                <div className="bg-[#8B0000] p-3 rounded-2xl">
                   <Star className="w-8 h-8 text-[#FFD700] fill-[#FFD700]" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-[#000080]">4.9/5</div>
-                  <div className="text-xs text-[#000080]/70 font-bold uppercase tracking-widest">Customer Rating</div>
+                  <div className="text-2xl font-bold text-[#8B0000]">4.9/5</div>
+                  <div className="text-xs text-[#8B0000]/70 font-bold uppercase tracking-widest">Customer Rating</div>
                 </div>
               </div>
             </div>
@@ -204,14 +204,14 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8 lg:sticky lg:top-48">
-            <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-tight drop-shadow-[0_0_15px_rgba(135,206,235,0.8)]">Let's Plan Your <br />Next Big Event</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-tight drop-shadow-[0_0_15px_rgba(255,0,0,0.8)]">Let's Plan Your <br />Next Big Event</h2>
             <p className="text-stone-300 leading-relaxed max-w-md font-medium">
               Whether it's a grand wedding or an intimate kitty party, we bring the same level of passion and precision. 
               Fill out the form and our team will get back to you within 24 hours.
             </p>
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full bg-[#FFD700] flex items-center justify-center text-[#000080]">
+                <div className="w-12 h-12 rounded-full bg-[#FFD700] flex items-center justify-center text-[#8B0000]">
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
@@ -220,7 +220,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full bg-[#FFD700] flex items-center justify-center text-[#000080]">
+                <div className="w-12 h-12 rounded-full bg-[#FFD700] flex items-center justify-center text-[#8B0000]">
                   <Award className="w-6 h-6" />
                 </div>
                 <div>

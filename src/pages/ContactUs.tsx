@@ -9,13 +9,13 @@ export default function ContactUs() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pb-12 bg-[#2D1B14] min-h-screen relative overflow-hidden"
+      className="pb-12 bg-[#8B008B] min-h-screen relative overflow-hidden"
     >
       {/* Texture Overlay */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/leather.png')]" />
 
       {/* Header */}
-      <section className="bg-[#3E2723] py-24 px-4 text-white border-b border-[#FFD700]/20 shadow-2xl relative z-10">
+      <section className="bg-[#8B008B] py-24 px-4 text-white border-b border-[#FFD700]/20 shadow-2xl relative z-10">
         <div className="max-w-7xl mx-auto text-center space-y-8">
           <motion.span 
             initial={{ y: 20, opacity: 0 }}
@@ -50,7 +50,7 @@ export default function ContactUs() {
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="bg-[#4E342E] p-12 rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/5 space-y-10 text-white"
+            className="bg-[#8B008B] p-12 rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/5 space-y-10 text-white"
           >
             <div className="space-y-4 pb-8 border-b border-white/10">
               <h3 className="text-3xl font-black uppercase tracking-tight text-[#FFD700]">Owner Details</h3>
@@ -61,7 +61,7 @@ export default function ContactUs() {
             </div>
 
             <div className="flex items-start space-x-6 group">
-              <div className="w-16 h-16 bg-[#FFD700] rounded-3xl flex items-center justify-center text-[#3E2723] shrink-0 shadow-lg group-hover:rotate-12 transition-transform duration-500">
+              <div className="w-16 h-16 bg-[#FFD700] rounded-3xl flex items-center justify-center text-[#8B008B] shrink-0 shadow-lg group-hover:rotate-12 transition-transform duration-500">
                 <Phone className="w-8 h-8" />
               </div>
               <div>
@@ -119,19 +119,19 @@ export default function ContactUs() {
 
       {/* Map Section */}
       <section className="max-w-7xl mx-auto px-4 mt-24 relative z-10">
-        <div className="h-[600px] bg-stone-200 rounded-[4rem] overflow-hidden relative group border-8 border-[#3E2723] shadow-2xl">
-          <div className="absolute inset-0 flex items-center justify-center bg-[#3E2723]/60 backdrop-blur-[2px] group-hover:backdrop-blur-0 transition-all duration-1000 z-10">
+        <div className="h-[600px] bg-stone-200 rounded-[4rem] overflow-hidden relative group border-8 border-[#8B008B] shadow-2xl">
+          <div className="absolute inset-0 flex items-center justify-center bg-[#8B008B]/60 backdrop-blur-[2px] group-hover:backdrop-blur-0 transition-all duration-1000 z-10">
             <div className="text-center space-y-6 bg-white p-12 rounded-[3rem] shadow-2xl border-4 border-[#FFD700] max-w-md mx-4">
-              <div className="w-20 h-20 bg-[#3E2723] rounded-3xl flex items-center justify-center text-[#FFD700] mx-auto mb-6 animate-bounce shadow-xl">
+              <div className="w-20 h-20 bg-[#8B008B] rounded-3xl flex items-center justify-center text-[#FFD700] mx-auto mb-6 animate-bounce shadow-xl">
                 <MapPin className="w-10 h-10" />
               </div>
-              <h3 className="text-4xl font-black text-[#3E2723] uppercase tracking-tighter">Find Us</h3>
+              <h3 className="text-4xl font-black text-[#8B008B] uppercase tracking-tighter">Find Us</h3>
               <p className="text-stone-600 font-bold uppercase tracking-widest text-xs leading-relaxed">{BUSINESS_INFO.address}</p>
               <a 
                 href="https://maps.app.goo.gl/7bekmg2potpdq5bz9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-12 py-5 bg-[#3E2723] text-[#FFD700] rounded-full font-black hover:bg-[#FFD700] hover:text-[#3E2723] transition-all uppercase tracking-[0.3em] text-xs shadow-2xl"
+                className="inline-block px-12 py-5 bg-[#8B008B] text-[#FFD700] rounded-full font-black hover:bg-[#FFD700] hover:text-[#8B008B] transition-all uppercase tracking-[0.3em] text-xs shadow-2xl"
               >
                 Open in Google Maps
               </a>

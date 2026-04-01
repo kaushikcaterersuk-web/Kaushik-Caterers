@@ -3,7 +3,7 @@ import { BUSINESS_INFO } from '../constants';
 
 export function Footer() {
   return (
-    <footer className="bg-[#3E2723] text-stone-300 py-16 px-4">
+    <footer className="bg-[#8B0000] text-stone-300 py-16 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-4">
           <div className="flex flex-col text-white">
