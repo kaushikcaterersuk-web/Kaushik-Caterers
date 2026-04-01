@@ -1,0 +1,7 @@
+{
+  "name": "Kaushik Caterers - Premium Event Planning & Catering",
+  "description": "Professional event planning and catering services since 1985. Specializing in weddings, birthdays, and corporate events across Dehradun and PAN India.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
