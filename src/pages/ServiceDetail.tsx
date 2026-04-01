@@ -83,7 +83,14 @@ export default function ServiceDetail({ id: propId }: ServiceDetailProps) {
           <img src={service.image} alt="" className="w-full h-full object-cover blur-sm" referrerPolicy="no-referrer" />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <a href="/services.html" className="inline-flex items-center gap-2 text-[#FFD700] mb-8 font-bold uppercase tracking-widest text-sm hover:translate-x-[-4px] transition-transform">
+          <div className="flex items-center gap-2 text-[#FFD700]/60 mb-8 font-bold uppercase tracking-widest text-[10px] md:text-xs">
+            <a href="/" className="hover:text-[#FFD700] transition-colors">Home</a>
+            <span>/</span>
+            <a href="/services" className="hover:text-[#FFD700] transition-colors">Services</a>
+            <span>/</span>
+            <span className="text-[#FFD700]">{service.title}</span>
+          </div>
+          <a href="/services" className="inline-flex items-center gap-2 text-[#FFD700] mb-8 font-bold uppercase tracking-widest text-sm hover:translate-x-[-4px] transition-transform">
             <ArrowLeft className="w-4 h-4" />
             Back to Services
           </a>

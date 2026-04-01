@@ -57,7 +57,7 @@ export default function Services() {
                   {service.description}
                 </p>
                 <a
-                  href={`/${service.id}.html`}
+                  href={`/services/${service.id}`}
                   className="inline-flex items-center gap-2 text-[#FFD700] font-bold uppercase tracking-widest text-sm group/btn hover:text-white transition-colors"
                 >
                   Learn More
