@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Star, Users, Calendar, Award, CheckCircle2, Heart } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { OCCASIONS, BUSINESS_INFO, TESTIMONIALS } from '../constants';
 import EnquiryForm from '../components/EnquiryForm';
 
@@ -43,13 +42,13 @@ export default function Home() {
               Exquisite taste, impeccable service, and 41+ years of trust.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-[#FFD700] text-[#000080] rounded-full font-black hover:bg-white transition-all flex items-center group uppercase tracking-widest">
+              <a href="/contact.html" className="px-8 py-4 bg-[#FFD700] text-[#000080] rounded-full font-black hover:bg-white transition-all flex items-center group uppercase tracking-widest">
                 Plan Your Event
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/services" className="px-8 py-4 bg-transparent border-2 border-[#FFD700] text-[#FFD700] rounded-full font-bold hover:bg-[#FFD700] hover:text-[#000080] transition-all uppercase tracking-widest">
+              </a>
+              <a href="/services.html" className="px-8 py-4 bg-transparent border-2 border-[#FFD700] text-[#FFD700] rounded-full font-bold hover:bg-[#FFD700] hover:text-[#000080] transition-all uppercase tracking-widest">
                 Explore Services
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -84,9 +83,9 @@ export default function Home() {
             <span className="text-xs font-bold tracking-[0.3em] text-[#FFD700] uppercase mb-4 block">Our Expertise</span>
             <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-tight">Occasions We Celebrate</h2>
           </div>
-          <Link to="/services" className="text-[#FFD700] font-bold flex items-center hover:underline decoration-2 underline-offset-8 uppercase tracking-widest text-sm">
+          <a href="/services.html" className="text-[#FFD700] font-bold flex items-center hover:underline decoration-2 underline-offset-8 uppercase tracking-widest text-sm">
             View All Services <ArrowRight className="ml-2 w-4 h-4" />
-          </Link>
+          </a>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {OCCASIONS.slice(0, 6).map((occasion, index) => (
@@ -114,10 +113,10 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Link to="/services" className="inline-flex items-center px-10 py-4 bg-white/10 border border-white/20 text-white rounded-full font-bold hover:bg-white hover:text-[#000080] transition-all uppercase tracking-widest text-sm group">
+          <a href="/services.html" className="inline-flex items-center px-10 py-4 bg-white/10 border border-white/20 text-white rounded-full font-bold hover:bg-white hover:text-[#000080] transition-all uppercase tracking-widest text-sm group">
             View More Services
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
         </div>
       </section>
 

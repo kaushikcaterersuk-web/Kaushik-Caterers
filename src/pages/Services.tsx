@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { SERVICE_CATEGORIES, BUSINESS_INFO } from '../constants';
 import { ArrowRight, Users, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function Services() {
   return (
@@ -57,13 +56,13 @@ export default function Services() {
                 <p className="text-stone-400 leading-relaxed font-medium flex-grow">
                   {service.description}
                 </p>
-                <Link
-                  to={`/services/${service.id}`}
+                <a
+                  href={`/services/${service.id}`}
                   className="inline-flex items-center gap-2 text-[#FFD700] font-bold uppercase tracking-widest text-sm group/btn hover:text-white transition-colors"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                </Link>
+                </a>
               </div>
             </motion.div>
           ))}
@@ -91,9 +90,9 @@ export default function Services() {
       <section className="max-w-3xl mx-auto px-4 py-16 text-center space-y-8">
         <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-tight">Ready to start planning?</h2>
         <p className="text-stone-300 text-lg font-medium">Our experts are waiting to help you create an event that exceeds your expectations.</p>
-        <Link to="/contact" className="inline-block px-12 py-5 bg-[#FFD700] text-[#000080] rounded-full font-bold hover:bg-[#FFC000] transition-all shadow-xl uppercase tracking-widest">
+        <a href="/contact.html" className="inline-block px-12 py-5 bg-[#FFD700] text-[#000080] rounded-full font-bold hover:bg-[#FFC000] transition-all shadow-xl uppercase tracking-widest">
           Get a Free Quote
-        </Link>
+        </a>
       </section>
     </motion.div>
   );

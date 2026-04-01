@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { SERVICE_CATEGORIES, BUSINESS_INFO } from '../constants';
 import { ArrowLeft, Send, Sparkles, CheckCircle2, Users, Copy, Check, X } from 'lucide-react';
@@ -24,7 +24,7 @@ export default function ServiceDetail() {
       <div className="min-h-screen bg-stone-100 flex items-center justify-center text-[#000080]">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold uppercase tracking-tighter">Service Not Found</h1>
-          <Link to="/services" className="text-[#000080] underline uppercase tracking-widest font-bold">Back to Services</Link>
+          <a href="/services.html" className="text-[#000080] underline uppercase tracking-widest font-bold">Back to Services</a>
         </div>
       </div>
     );
@@ -78,10 +78,10 @@ export default function ServiceDetail() {
           <img src={service.image} alt="" className="w-full h-full object-cover blur-sm" referrerPolicy="no-referrer" />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <Link to="/services" className="inline-flex items-center gap-2 text-[#FFD700] mb-8 font-bold uppercase tracking-widest text-sm hover:translate-x-[-4px] transition-transform">
+          <a href="/services.html" className="inline-flex items-center gap-2 text-[#FFD700] mb-8 font-bold uppercase tracking-widest text-sm hover:translate-x-[-4px] transition-transform">
             <ArrowLeft className="w-4 h-4" />
             Back to Services
-          </Link>
+          </a>
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter">{service.title}</h1>
             <p className="text-stone-300 max-w-2xl leading-relaxed font-medium text-lg">
